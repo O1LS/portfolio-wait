@@ -80,20 +80,21 @@
         transform: translate(-50%, -50%);
         pointer-events: none;
         z-index: 9998;
+        backdrop-filter: blur(0px); /* Initialize blur to allow transition */
+        -webkit-backdrop-filter: blur(0px);
         transition: width 0.3s cubic-bezier(0.23, 1, 0.32, 1),
                     height 0.3s cubic-bezier(0.23, 1, 0.32, 1),
                     background 0.3s,
                     border-color 0.3s,
-                    opacity 0.3s;
+                    opacity 0.3s,
+                    backdrop-filter 0.3s,
+                    -webkit-backdrop-filter 0.3s;
       }
 
       .cursor-trail.hovering {
-        width: 56px;
-        height: 56px;
-        background: rgba(255, 255, 255, 0.08);
-        border-color: transparent;
-        backdrop-filter: blur(2px);
-        -webkit-backdrop-filter: blur(2px);
+        width: 0px;
+        height: 0px;
+        opacity: 0;
       }
 
       .container {
